@@ -3,10 +3,24 @@
 - docker
 - docker-compose
 
+### run endorser service
+
+Open a new bash shell and enter the following:
+
+```sh
+git clone https://github.com/bcgov/aries-endorser-service.git
+cd aries-endorser-service/docker
+./manage build
+ENDORSER_SEED=testendorserseed_123123123123123 ./manage start --logs
+```
+
+You can choose your own endorser seed, but the DID configured in traction (see below) must match.
+
 ### start
 
 1. copy `.env-example` to `.env` and adjust as necessary for your environment
-2. bring up traction
+2. ensure that the endorser DID matches the above setup
+3. bring up traction
 
 ```sh
 cp .env-example .env
